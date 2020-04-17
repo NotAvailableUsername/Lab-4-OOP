@@ -29,7 +29,11 @@ void Apotheke::add_medicament(string name, double concentration, double preis, i
 
 void Apotheke::remove_medicament(string name)
 {
-
+	for(int i = 0; i < apotheke.siez(); i++)
+		if (apotheke[i] == name) {
+			apotheke.erase(apotheke.begin() + i);
+			return;
+		}
 }
 vector<Medikament> Apotheke::getApotheke()
 {
